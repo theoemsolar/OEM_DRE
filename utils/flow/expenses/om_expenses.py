@@ -45,8 +45,8 @@ class OMExpense:
     def by_week(self, date, return_dict=True):
         totals = defaultdict(list)
         first_day_of_week, last_day_of_week = get_week_range(date)
-        for day in range(first_day_of_week.day, last_day_of_week.day + 1):
-            current_date = datetime.date(date.year, date.month, day)
+        for delta in range((last_day_of_week - first_day_of_week).days + 1):
+            current_date = first_day_of_week + datetime.timedelta(delta)
             for expense, value in self.by_day(current_date).items():
                 totals[expense].append({"date": current_date, "value": value})
 
