@@ -1,0 +1,1 @@
+from components.dashboard.statement_chart.statement_chart import statement_chart

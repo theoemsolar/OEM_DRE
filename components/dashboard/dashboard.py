@@ -5,7 +5,7 @@ import streamlit as st
 
 from components.dashboard.calendar import Calendar
 from components.dashboard.metrics.metrics import Metrics
-from components.dashboard.sankey_diagram.sankey_diagram import SankeyDiagram
+from components.dashboard.statement_chart import statement_chart
 
 
 @dataclass
@@ -68,5 +68,5 @@ class Dashboard:
             st.markdown("</div>", unsafe_allow_html=True)
 
         st.markdown('<div class="sankey_diagram">', unsafe_allow_html=True)
-        SankeyDiagram(self.expenses_data).show()
+        statement_chart()
         st.markdown("</div>", unsafe_allow_html=True)
